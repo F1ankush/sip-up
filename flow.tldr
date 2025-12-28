@@ -34,8 +34,15 @@
 	},
 	"records": [
 		{
+<<<<<<< Updated upstream
 			"x": 0,
 			"y": 0,
+=======
+			"id": "pointer:pointer",
+			"typeName": "pointer",
+			"x": -74.42983442592686,
+			"y": -1151.2814285606987,
+>>>>>>> Stashed changes
 			"lastActivityTimestamp": 0,
 			"meta": {},
 			"id": "pointer:pointer",
@@ -75,9 +82,15 @@
 			"typeName": "shape"
 		},
 		{
+<<<<<<< Updated upstream
 			"x": 112.80921048071497,
 			"y": 962.126230969575,
 			"z": 0.344207066452731,
+=======
+			"x": 74.42983442592686,
+			"y": 1151.2814285606987,
+			"z": 0.4337359420012756,
+>>>>>>> Stashed changes
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -878,8 +891,13 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
+<<<<<<< Updated upstream
 				"w": 1300,
 				"h": 720
+=======
+				"w": 1604.736083984375,
+				"h": 1071.360107421875
+>>>>>>> Stashed changes
 			},
 			"insets": [
 				false,
@@ -894,7 +912,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.25,
+			"devicePixelRatio": 0.868055522441864,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
