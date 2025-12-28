@@ -1,0 +1,378 @@
+================================================================================
+  B2B RETAILER ORDERING AND GST BILLING PLATFORM
+  QUICK START GUIDE
+================================================================================
+
+PROJECT LOCATION: C:\xampp\htdocs\top1\
+
+================================================================================
+QUICK 5-MINUTE SETUP
+================================================================================
+
+1. START SERVICES
+   - Open XAMPP Control Panel
+   - Click "Start" for Apache and MySQL
+   - Wait for both to show as running (green background)
+
+2. CREATE DATABASE
+   - Open browser: http://localhost/phpmyadmin/
+   - Click "New" → Create database: "b2b_billing_system"
+   - Go to Import tab
+   - Upload: C:\xampp\htdocs\top1\database_schema.sql
+   - Click "Go"
+
+3. CONFIGURE DATABASE
+   - Edit: C:\xampp\htdocs\top1\includes\config.php
+   - Update database credentials (usually just database name)
+   - Database name: b2b_billing_system
+   - User: root
+   - Password: (leave blank for XAMPP default)
+
+4. CREATE FIRST ADMIN
+   - Open: http://localhost/top1/admin/setup.php
+   - Admin Username: admin
+   - Admin Email: admin@example.com
+   - Password: Admin@123456
+   - Setup Key: SETUP_KEY_2025_SECURE (from config.php)
+   - Click "Create Admin Account"
+
+5. LOGIN AS ADMIN
+   - Open: http://localhost/top1/admin/login.php
+   - Username: admin
+   - Password: Admin@123456
+   - Click "Login"
+
+6. ADD SAMPLE PRODUCTS
+   - Click "Products" menu
+   - Click "+ Add New Product"
+   - Add 3-5 sample products with prices and stock quantities
+
+7. TEST RETAILER SIGNUP
+   - Open: http://localhost/top1/pages/apply.php
+   - Fill form with test data
+   - Submit application
+   - Go back to admin panel
+   - Click "Applications"
+   - Approve the application
+   - Create password for retailer
+
+8. TEST RETAILER LOGIN
+   - Open: http://localhost/top1/pages/login.php
+   - Login with test retailer credentials
+   - Browse products and place test order
+
+9. VERIFY PAYMENT (ADMIN)
+   - Go back to admin
+   - Click "Payments"
+   - Approve the pending payment
+
+10. GENERATE BILL (ADMIN)
+    - Click "Orders"
+    - Generate bill for the completed order
+    - Download and verify
+
+================================================================================
+KEY URLs
+================================================================================
+
+MAIN SITE:
+  - Home: http://localhost/top1/
+  - About: http://localhost/top1/pages/about.php
+  - Products: http://localhost/top1/pages/products.php
+  - Contact: http://localhost/top1/pages/contact.php
+  - Apply: http://localhost/top1/pages/apply.php
+
+RETAILER AREA:
+  - Login: http://localhost/top1/pages/login.php
+  - Dashboard: http://localhost/top1/pages/dashboard.php
+  - Orders: http://localhost/top1/pages/orders.php
+  - Bills: http://localhost/top1/pages/bills.php
+
+ADMIN AREA:
+  - Admin Login: http://localhost/top1/admin/login.php
+  - Admin Setup: http://localhost/top1/admin/setup.php
+  - Admin Dashboard: http://localhost/top1/admin/dashboard.php
+  - Applications: http://localhost/top1/admin/applications.php
+  - Products: http://localhost/top1/admin/products.php
+  - Orders: http://localhost/top1/admin/orders.php
+  - Payments: http://localhost/top1/admin/payments.php
+  - Bills: http://localhost/top1/admin/bills.php
+
+TOOLS:
+  - phpMyAdmin: http://localhost/phpmyadmin/
+  - XAMPP Control: http://localhost/
+
+================================================================================
+DEFAULT CREDENTIALS (CHANGE THESE!)
+================================================================================
+
+ADMIN ACCOUNT (First Time Setup):
+  - Username: admin (you set this)
+  - Password: (you set this)
+  - Setup Key: SETUP_KEY_2025_SECURE
+
+TEST RETAILER:
+  - Email: test@example.com (example)
+  - Password: (admin sets this during approval)
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+top1/
+├── index.php                     Home page
+├── includes/
+│   ├── config.php               Database configuration
+│   ├── db.php                   Database connection class
+│   └── functions.php            Utility functions
+├── assets/
+│   ├── css/style.css            Responsive CSS styling
+│   ├── js/main.js               JavaScript functions
+│   └── images/                  Product images folder
+├── pages/                       Retailer & Public pages
+│   ├── about.php
+│   ├── products.php
+│   ├── contact.php
+│   ├── apply.php
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── orders.php
+│   ├── bills.php
+│   └── logout.php
+├── admin/                       Admin pages
+│   ├── setup.php
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── applications.php
+│   ├── products.php
+│   ├── orders.php
+│   ├── payments.php
+│   ├── bills.php
+│   └── logout.php
+├── uploads/
+│   ├── payment_proofs/          Payment proof images
+│   └── bills/                   Generated bills
+├── database_schema.sql          Database structure
+├── README.md                    Full documentation
+├── INSTALLATION.md              Detailed installation guide
+└── QUICK_START.txt              This file
+
+================================================================================
+DATABASE TABLES
+================================================================================
+
+1. admins              - Admin user accounts
+2. admin_sessions      - Admin login sessions
+3. retailer_applications - Retailer account applications
+4. users               - Approved retailer accounts
+5. sessions            - Retailer login sessions
+6. products            - Product catalog
+7. orders              - Customer orders
+8. order_items         - Items in each order
+9. payments            - Payment records
+10. bills              - Generated invoices
+
+================================================================================
+COMMON TASKS
+================================================================================
+
+ADD A NEW PRODUCT:
+  1. Login as admin
+  2. Click "Products"
+  3. Click "+ Add New Product"
+  4. Fill in details
+  5. Click "Add Product"
+
+APPROVE A RETAILER:
+  1. Login as admin
+  2. Click "Applications"
+  3. Click "Review" on pending application
+  4. Click "Approve Application"
+  5. Create password for retailer
+
+VERIFY PAYMENT:
+  1. Login as admin
+  2. Click "Payments"
+  3. Click "Verify" on pending payment
+  4. Review payment proof
+  5. Click "Approve Payment" or "Reject Payment"
+
+GENERATE BILL:
+  1. Login as admin
+  2. Click "Orders"
+  3. Find order with verified payment
+  4. Click "Generate Bill"
+  5. Bill is created and stored
+
+DOWNLOAD BILL (AS RETAILER):
+  1. Login as retailer
+  2. Click "Bills"
+  3. Find your bill
+  4. Click "Download"
+  5. PDF bill is downloaded
+
+================================================================================
+IMPORTANT CONFIGURATION
+================================================================================
+
+File: C:\xampp\htdocs\top1\includes\config.php
+
+DATABASE:
+  DB_HOST = 'localhost'
+  DB_USER = 'root'
+  DB_PASS = '' (blank for XAMPP)
+  DB_NAME = 'b2b_billing_system'
+
+COMPANY INFO:
+  COMPANY_NAME = 'Premium Retail Distribution'
+  COMPANY_GST = '27AABCU1234B2Z5'
+  COMPANY_PHONE = '+91 9876543210'
+  COMPANY_EMAIL = 'support@retailerplatform.com'
+  COMPANY_ADDRESS = 'Bangalore, Karnataka, India'
+
+SECURITY:
+  ADMIN_SETUP_KEY = 'SETUP_KEY_2025_SECURE'
+  SESSION_TIMEOUT = 3600 (in seconds)
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+BLANK PAGE OR ERROR?
+  1. Check C:\xampp\htdocs\top1\ exists
+  2. Start Apache and MySQL
+  3. Check error log in C:\xampp\logs\
+  4. Verify database is created
+  5. Check config.php database settings
+
+CAN'T LOGIN?
+  1. Check if MySQL is running
+  2. Verify admin account was created
+  3. Check caps lock on password
+  4. Browser cookies enabled?
+  5. Clear browser cache
+
+UPLOAD NOT WORKING?
+  1. Check uploads/ folder exists
+  2. Verify permissions are correct
+  3. Check file size limit (5MB default)
+  4. Allowed formats: JPG, PNG only
+  5. Check disk space
+
+DATABASE ERROR?
+  1. Open phpMyAdmin: http://localhost/phpmyadmin/
+  2. Check if b2b_billing_system database exists
+  3. Check if tables are created
+  4. Re-import database_schema.sql if needed
+
+================================================================================
+TESTING CHECKLIST
+================================================================================
+
+BASIC FUNCTIONALITY:
+  [ ] Home page loads correctly
+  [ ] Admin login works
+  [ ] Retailer login works
+  [ ] Can add product as admin
+  [ ] Can view products as retailer
+  [ ] Can apply for account
+  [ ] Admin can approve application
+  [ ] Retailer can place order
+  [ ] Payment verification works
+  [ ] Bill generation works
+  [ ] Bill download works
+
+SECURITY:
+  [ ] Login required for retailer dashboard
+  [ ] Admin pages protected from non-admin access
+  [ ] Password hashing working
+  [ ] Session validation working
+  [ ] File upload validation working
+  [ ] SQL injection prevented (prepared statements)
+
+DESIGN:
+  [ ] Desktop layout responsive
+  [ ] Mobile layout responsive
+  [ ] Tablet layout responsive
+  [ ] Navigation works on all devices
+  [ ] Forms display correctly
+  [ ] Tables display correctly
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. READ FULL DOCUMENTATION
+   - Open README.md for complete feature list
+   - Open INSTALLATION.md for detailed setup
+
+2. CUSTOMIZE FOR YOUR BUSINESS
+   - Update company name and details
+   - Change colors in CSS file
+   - Add your company logo
+   - Update contact information
+
+3. ADD MORE FEATURES
+   - Email notifications
+   - SMS alerts
+   - Payment gateway integration
+   - Advanced analytics
+   - Bulk order import
+
+4. PREPARE FOR PRODUCTION
+   - Change admin setup key
+   - Set strong database password
+   - Configure HTTPS/SSL
+   - Set up regular backups
+   - Remove setup.php
+   - Configure logging
+
+5. TRAIN USERS
+   - Create user guides
+   - Train admin staff
+   - Onboard retailers
+   - Document procedures
+
+================================================================================
+SUPPORT & RESOURCES
+================================================================================
+
+DOCUMENTATION:
+  - README.md (Features & overview)
+  - INSTALLATION.md (Detailed setup)
+  - QUICK_START.txt (This file)
+
+OFFICIAL RESOURCES:
+  - PHP: https://www.php.net/
+  - MySQL: https://dev.mysql.com/
+  - XAMPP: https://www.apachefriends.org/
+
+CONTACT:
+  - Email: support@retailerplatform.com
+  - Phone: +91 9876543210
+  - Address: Bangalore, Karnataka, India
+
+================================================================================
+VERSION INFORMATION
+================================================================================
+
+Project: B2B Retailer Ordering & GST Billing Platform
+Version: 1.0.0
+Status: Production Ready
+Created: December 2025
+Framework: Core PHP (No Frameworks)
+Database: MySQL 5.7+
+Language: PHP 7.4+
+
+================================================================================
+
+CONGRATULATIONS! Your platform is ready to use. 🎉
+
+Start with the Quick 5-Minute Setup above, then refer to INSTALLATION.md
+for more details if needed.
+
+For full documentation, see README.md.
+
+Happy Selling! 🚀
+
+================================================================================

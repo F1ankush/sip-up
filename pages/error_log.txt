@@ -1,0 +1,20 @@
+[28-Dec-2025 17:01:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function generateCSRFToken() in C:\xampp\htdocs\top1\pages\contact.php:59
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\contact.php on line 59
+[28-Dec-2025 17:02:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function generateCSRFToken() in C:\xampp\htdocs\top1\pages\contact.php:59
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\contact.php on line 59
+[28-Dec-2025 17:03:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function generateCSRFToken() in C:\xampp\htdocs\top1\pages\contact.php:59
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\contact.php on line 59
+[28-Dec-2025 17:03:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function generateCSRFToken() in C:\xampp\htdocs\top1\pages\contact.php:59
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\contact.php on line 59
+[28-Dec-2025 17:04:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function generateCSRFToken() in C:\xampp\htdocs\top1\pages\contact.php:59
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\contact.php on line 59

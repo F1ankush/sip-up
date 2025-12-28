@@ -1,0 +1,27 @@
+# B2B Retailer Platform - Apache Configuration
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /top1/
+    
+    # Prevent direct access to sensitive folders
+    RewriteRule ^(includes|uploads/payment_proofs|uploads/bills)(/|$) - [F]
+    
+    # Allow direct file access for existing files
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# File upload security
+<Files "*.php">
+    SetHandler application/x-httpd-php
+</Files>
+
+# Disable directory browsing
+Options -Indexes

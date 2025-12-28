@@ -1,0 +1,108 @@
+[28-Dec-2025 14:32:18 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\admin\setup.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[28-Dec-2025 14:32:25 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\admin\setup.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[28-Dec-2025 14:32:27 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\admin\setup.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[28-Dec-2025 15:26:52 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '5a38c8d5b42cf8d3f735723af7f72847d42212d32c7f6ccda672de91d81edf9e' for key 'admin_sessions.session_hash' in C:\xampp\htdocs\top1\includes\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\functions.php(78): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\top1\admin\login.php(43): createAdminSession(1)
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\functions.php on line 78
+[28-Dec-2025 15:30:55 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:30:59 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:31:00 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:31:01 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:31:01 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:31:02 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:31:02 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:43 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:44 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:46 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:50 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:32:51 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:34 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:35 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:46 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:47 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:49 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:49 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:50 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:33:53 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:34:49 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:34:52 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:02 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:05 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:26 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:27 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:28 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:33 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:38 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:41 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:35:44 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:36:38 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:36:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:22 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:23 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:23 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:23 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:27 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:37:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare getAdminData() (previously declared in C:\xampp\htdocs\top1\includes\functions.php:176) in C:\xampp\htdocs\top1\includes\functions.php on line 197
+[28-Dec-2025 15:52:00 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '5a38c8d5b42cf8d3f735723af7f72847d42212d32c7f6ccda672de91d81edf9e' for key 'admin_sessions.session_hash' in C:\xampp\htdocs\top1\includes\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\functions.php(78): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\top1\admin\login.php(43): createAdminSession(1)
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\functions.php on line 78
+[28-Dec-2025 15:52:22 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\admin\application_detail.php:56
+Stack trace:
+#0 C:\xampp\htdocs\top1\admin\application_detail.php(56): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\top1\admin\application_detail.php on line 56
+[28-Dec-2025 15:55:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\admin\application_detail.php:56
+Stack trace:
+#0 C:\xampp\htdocs\top1\admin\application_detail.php(56): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\top1\admin\application_detail.php on line 56
+[28-Dec-2025 15:56:04 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\admin\application_detail.php:56
+Stack trace:
+#0 C:\xampp\htdocs\top1\admin\application_detail.php(56): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\top1\admin\application_detail.php on line 56
+[28-Dec-2025 16:04:17 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\includes\functions.php:343
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\functions.php(343): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\top1\admin\application_detail.php(55): createUserAccountOnApproval(3, 'ka@gmal.com', '9199734222', 'Karan Kumar', 'asdyuiogfdghjkj...')
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\functions.php on line 343
+[28-Dec-2025 16:04:26 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\includes\functions.php:343
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\functions.php(343): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\top1\admin\application_detail.php(55): createUserAccountOnApproval(3, 'ka@gmal.com', '9199734222', 'Karan Kumar', 'asdyuiogfdghjkj...')
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\functions.php on line 343
+[28-Dec-2025 16:04:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'Karan Kumar' for key 'users.username' in C:\xampp\htdocs\top1\includes\functions.php:343
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\functions.php(343): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\top1\admin\application_detail.php(55): createUserAccountOnApproval(3, 'ka@gmal.com', '9199734222', 'Karan Kumar', 'asdyuiogfdghjkj...')
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\functions.php on line 343
