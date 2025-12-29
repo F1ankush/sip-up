@@ -354,3 +354,88 @@ function createUserAccountOnApproval($appId, $email, $phone, $username, $shop_ad
     }
 }
 
+// Contact Message Functions
+function saveContactMessage($name, $email, $phone, $subject, $message) {
+    global $db;
+    $status = 'new';
+    $createdAt = date('Y-m-d H:i:s');
+    
+    $stmt = $db->prepare("INSERT INTO contact_messages (name, email, phone, subject, message, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    
+    if (!$stmt) {
+        return [
+            'success' => false,
+            'message' => 'Database error: ' . $db->getConnection()->error
+        ];
+    }
+    
+    $stmt->bind_param("sssssss", $name, $email, $phone, $subject, $message, $status, $createdAt);
+    
+    if ($stmt->execute()) {
+        return [
+            'success' => true,
+            'message' => 'Message saved successfully',
+            'message_id' => $db->getLastId()
+        ];
+    } else {
+        return [
+            'success' => false,
+            'message' => 'Error saving message: ' . $stmt->error
+        ];
+    }
+}
+
+function getContactMessages($status = null, $limit = null) {
+    global $db;
+    
+    if ($status) {
+        $stmt = $db->prepare("SELECT * FROM contact_messages WHERE status = ? ORDER BY created_at DESC" . ($limit ? " LIMIT $limit" : ""));
+        $stmt->bind_param("s", $status);
+    } else {
+        $stmt = $db->prepare("SELECT * FROM contact_messages ORDER BY created_at DESC" . ($limit ? " LIMIT $limit" : ""));
+    }
+    
+    $stmt->execute();
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
+
+function getContactMessage($messageId) {
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM contact_messages WHERE id = ?");
+    $stmt->bind_param("i", $messageId);
+    $stmt->execute();
+    return $stmt->get_result()->fetch_assoc();
+}
+
+function updateMessageStatus($messageId, $status) {
+    global $db;
+    $updatedAt = date('Y-m-d H:i:s');
+    
+    $stmt = $db->prepare("UPDATE contact_messages SET status = ?, updated_at = ? WHERE id = ?");
+    $stmt->bind_param("ssi", $status, $updatedAt, $messageId);
+    
+    return $stmt->execute();
+}
+
+function replyToMessage($messageId, $adminId, $reply) {
+    global $db;
+    $repliedDate = date('Y-m-d H:i:s');
+    $status = 'replied';
+    $updatedAt = date('Y-m-d H:i:s');
+    
+    $stmt = $db->prepare("UPDATE contact_messages SET admin_reply = ?, replied_by = ?, replied_date = ?, status = ?, updated_at = ? WHERE id = ?");
+    $stmt->bind_param("sissi", $reply, $adminId, $repliedDate, $status, $updatedAt, $messageId);
+    
+    return $stmt->execute();
+}
+
+function getNewMessagesCount() {
+    global $db;
+    $stmt = $db->prepare("SELECT COUNT(*) as count FROM contact_messages WHERE status = 'new'");
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+    return $result['count'];
+}
+
+
+```

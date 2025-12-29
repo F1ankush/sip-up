@@ -166,6 +166,26 @@ CREATE TABLE IF NOT EXISTS bills (
     FOREIGN KEY (generated_by) REFERENCES admins(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Contact Messages Table - Customer inquiries from contact form
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15),
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    status ENUM('new', 'read', 'replied', 'closed') DEFAULT 'new',
+    admin_reply TEXT,
+    replied_by INT,
+    replied_date TIMESTAMP NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_message_email (email),
+    INDEX idx_message_status (status),
+    INDEX idx_message_date (created_at),
+    FOREIGN KEY (replied_by) REFERENCES admins(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Create Additional Composite Indexes for better query performance
 CREATE INDEX idx_order_payment_method ON orders(payment_method);
 CREATE INDEX idx_bill_user_date ON bills(user_id, bill_date);
