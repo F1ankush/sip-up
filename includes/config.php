@@ -7,7 +7,7 @@ define('DB_NAME', 'u110596290_b2b_billing');
 
 
 // Site Configuration
-define('SITE_URL', 'http://localhost/top1/');
+//define('SITE_URL', 'http://localhost/top1/'); //
 define('SITE_NAME', 'B2B Retailer Platform');
 define('COMPANY_NAME', 'Premium Retail Distribution');
 define('COMPANY_GST', '27AABCU1234B2Z5');
