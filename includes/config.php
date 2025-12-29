@@ -1,9 +1,10 @@
 <?php
 // Database Configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'Karan@1903');
-define('DB_NAME', 'b2b_billing_system');
+define('DB_USER', 'u110596290_b2b_billing');
+define('DB_PASS', 'B2b@billingsystem');
+define('DB_NAME', 'u110596290_b2b_billing');
+
 
 // Site Configuration
 define('SITE_URL', 'http://localhost/top1/');
