@@ -354,88 +354,94 @@ function createUserAccountOnApproval($appId, $email, $phone, $username, $shop_ad
     }
 }
 
-// Contact Message Functions
-function saveContactMessage($name, $email, $phone, $subject, $message) {
-    global $db;
-    $status = 'new';
-    $createdAt = date('Y-m-d H:i:s');
-    
-    $stmt = $db->prepare("INSERT INTO contact_messages (name, email, phone, subject, message, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    
-    if (!$stmt) {
-        return [
-            'success' => false,
-            'message' => 'Database error: ' . $db->getConnection()->error
-        ];
-    }
-    
-    $stmt->bind_param("sssssss", $name, $email, $phone, $subject, $message, $status, $createdAt);
-    
-    if ($stmt->execute()) {
-        return [
-            'success' => true,
-            'message' => 'Message saved successfully',
-            'message_id' => $db->getLastId()
-        ];
-    } else {
-        return [
-            'success' => false,
-            'message' => 'Error saving message: ' . $stmt->error
-        ];
-    }
+// Navbar Functions
+function renderUserNavbar() {
+    $isLoggedIn = isLoggedIn();
+    $user = $isLoggedIn ? getUserData($_SESSION['user_id']) : null;
+    ?>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="<?php echo $isLoggedIn ? 'dashboard.php' : '../index.php'; ?>" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="<?php echo $isLoggedIn ? 'assets/images/logo1.jpg' : '../assets/images/logo1.jpg'; ?>" alt="Logo" style="height: 40px;">
+            </a>
+        </div>
+        
+        <ul class="navbar-menu">
+            <?php if ($isLoggedIn): ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="orders.php">Orders</a></li>
+                <li><a href="bills.php">Bills</a></li>
+                <li class="navbar-button-item"><a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a></li>
+            <?php else: ?>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li class="navbar-button-item"><a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a></li>
+                <li class="navbar-button-item"><a href="login.php" class="btn btn-secondary btn-capsule">Login</a></li>
+            <?php endif; ?>
+        </ul>
+        
+        <div class="navbar-buttons">
+            <?php if ($isLoggedIn): ?>
+                <span style="margin-right: 1rem;">Welcome, <?php echo htmlspecialchars($user['username']); ?></span>
+                <a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a>
+            <?php else: ?>
+                <a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a>
+                <a href="login.php" class="btn btn-secondary btn-capsule">Login</a>
+            <?php endif; ?>
+        </div>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <?php
 }
 
-function getContactMessages($status = null, $limit = null) {
-    global $db;
-    
-    if ($status) {
-        $stmt = $db->prepare("SELECT * FROM contact_messages WHERE status = ? ORDER BY created_at DESC" . ($limit ? " LIMIT $limit" : ""));
-        $stmt->bind_param("s", $status);
-    } else {
-        $stmt = $db->prepare("SELECT * FROM contact_messages ORDER BY created_at DESC" . ($limit ? " LIMIT $limit" : ""));
-    }
-    
-    $stmt->execute();
-    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+function renderAdminNavbar() {
+    $isAdminLoggedIn = isAdminLoggedIn();
+    $admin = $isAdminLoggedIn ? getAdminData($_SESSION['admin_id']) : null;
+    ?>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="<?php echo $isAdminLoggedIn ? 'dashboard.php' : '../index.php'; ?>" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="../assets/images/logo1.jpg" alt="Logo" style="height: 40px;">
+            </a>
+        </div>
+        
+        <?php if ($isAdminLoggedIn): ?>
+        <ul class="navbar-menu">
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="applications.php">Applications</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="orders.php">Orders</a></li>
+            <li><a href="payments.php">Payments</a></li>
+            <li><a href="bills.php">Bills</a></li>
+            <li class="navbar-button-item"><a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a></li>
+        </ul>
+        
+        <div class="navbar-buttons">
+            <span style="margin-right: 1rem;">Welcome, <?php echo htmlspecialchars($admin['username']); ?></span>
+            <a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a>
+        </div>
+        <?php else: ?>
+        <div class="navbar-buttons">
+            <a href="../index.php" class="btn btn-secondary btn-capsule">Back to Site</a>
+        </div>
+        <?php endif; ?>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <?php
 }
 
-function getContactMessage($messageId) {
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM contact_messages WHERE id = ?");
-    $stmt->bind_param("i", $messageId);
-    $stmt->execute();
-    return $stmt->get_result()->fetch_assoc();
-}
-
-function updateMessageStatus($messageId, $status) {
-    global $db;
-    $updatedAt = date('Y-m-d H:i:s');
-    
-    $stmt = $db->prepare("UPDATE contact_messages SET status = ?, updated_at = ? WHERE id = ?");
-    $stmt->bind_param("ssi", $status, $updatedAt, $messageId);
-    
-    return $stmt->execute();
-}
-
-function replyToMessage($messageId, $adminId, $reply) {
-    global $db;
-    $repliedDate = date('Y-m-d H:i:s');
-    $status = 'replied';
-    $updatedAt = date('Y-m-d H:i:s');
-    
-    $stmt = $db->prepare("UPDATE contact_messages SET admin_reply = ?, replied_by = ?, replied_date = ?, status = ?, updated_at = ? WHERE id = ?");
-    $stmt->bind_param("sissi", $reply, $adminId, $repliedDate, $status, $updatedAt, $messageId);
-    
-    return $stmt->execute();
-}
-
-function getNewMessagesCount() {
-    global $db;
-    $stmt = $db->prepare("SELECT COUNT(*) as count FROM contact_messages WHERE status = 'new'");
-    $stmt->execute();
-    $result = $stmt->get_result()->fetch_assoc();
-    return $result['count'];
-}
-
-
-```

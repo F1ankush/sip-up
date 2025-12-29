@@ -32,32 +32,7 @@ $bills = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="dashboard.php" style="display: flex; align-items: center; text-decoration: none;">
-               <img src="../assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
-            </a>
-        </div>
-        
-        <ul class="navbar-menu">
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="orders.php">Orders</a></li>
-            <li><a href="bills.php">Bills</a></li>
-            <li class="navbar-button-item"><a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a></li>
-        </ul>
-        
-        <div class="navbar-buttons">
-            <span style="margin-right: 1rem;">Welcome, <?php echo htmlspecialchars($user['username']); ?></span>
-            <a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderUserNavbar(); ?>
 
     <!-- Main Content -->
     <div class="container" style="margin: 3rem auto;">

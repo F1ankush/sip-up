@@ -10,35 +10,7 @@ require_once '../includes/config.php';
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="../index.php" style="display: flex; align-items: center; text-decoration: none;">
-               <img src="assets/images/logo1.jpg" alt="<?php echo SITE_NAME; ?>">
-                 <!--<span><?php echo SITE_NAME; ?></span> -->
-            </a>
-        </div>
-        
-        <ul class="navbar-menu">
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li class="navbar-button-item"><a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a></li>
-            <li class="navbar-button-item"><a href="login.php" class="btn btn-secondary btn-capsule">Login</a></li>
-        </ul>
-        
-        <div class="navbar-buttons">
-            <a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a>
-            <a href="login.php" class="btn btn-secondary btn-capsule">Login</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderUserNavbar(); ?>
 
     <!-- Page Header -->
     <section class="hero" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">

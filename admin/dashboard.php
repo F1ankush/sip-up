@@ -18,7 +18,6 @@ $pending_payments = $db->query("SELECT COUNT(*) as count FROM payments WHERE sta
 $total_products = $db->query("SELECT COUNT(*) as count FROM products WHERE is_active = 1")->fetch_assoc();
 $total_orders = $db->query("SELECT COUNT(*) as count FROM orders")->fetch_assoc();
 $total_revenue = $db->query("SELECT COALESCE(SUM(total_amount), 0) as total FROM bills")->fetch_assoc();
-$new_messages = $db->query("SELECT COUNT(*) as count FROM contact_messages WHERE status = 'new'")->fetch_assoc();
 
 // Get recent applications
 $stmt = $db->prepare("SELECT * FROM retailer_applications ORDER BY applied_date DESC LIMIT 5");
@@ -39,36 +38,7 @@ $pending_pays = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="dashboard.php" style="display: flex; align-items: center; text-decoration: none;">
-               <img src="../assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
-                <span><?php echo SITE_NAME; ?> - Admin</span>
-            </a>
-        </div>
-        
-        <ul class="navbar-menu">
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="applications.php">Applications</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="orders.php">Orders</a></li>
-            <li><a href="payments.php">Payments</a></li>
-            <li><a href="messages.php">Messages</a></li>
-            <li class="navbar-button-item"><a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a></li>
-        </ul>
-        
-        <div class="navbar-buttons">
-            <span style="margin-right: 1rem;">Admin: <?php echo htmlspecialchars($admin['username']); ?></span>
-            <a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderAdminNavbar(); ?>
 
     <!-- Main Content -->
     <div class="container" style="margin: 3rem auto;">
@@ -126,27 +96,14 @@ $pending_pays = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card" style="text-align: center; position: relative;">
-                    <h3 style="margin-top: 0;"><?php echo $new_messages['count']; ?></h3>
-                    <p>New Messages</p>
-                    <a href="messages.php" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">View</a>
-                    <?php if ($new_messages['count'] > 0): ?>
-                        <span style="position: absolute; top: 10px; right: 10px; background-color: var(--danger-color); color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.85rem;">
-                            <?php echo $new_messages['count']; ?>
-                        </span>
-                    <?php endif; ?>
-                </div>
-            </div>
-
-            <div class="col-3">
+            <div class="col-6">
                 <div class="card">
                     <h3 style="margin-top: 0;">Quick Actions</h3>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="applications.php" class="btn btn-secondary" style="text-align: center;">Review Applications</a>
-                        <a href="products.php?action=add" class="btn btn-secondary" style="text-align: center;">Add Product</a>
+                        <a href="applications.php" class="btn btn-secondary" style="text-align: center;">Approve/Reject Applications</a>
+                        <a href="products.php?action=add" class="btn btn-secondary" style="text-align: center;">Add New Product</a>
                         <a href="payments.php" class="btn btn-secondary" style="text-align: center;">Verify Payments</a>
-                        <a href="messages.php" class="btn btn-secondary" style="text-align: center;">View Messages</a>
+                        <a href="bills_generate.php" class="btn btn-secondary" style="text-align: center;">Generate Bills</a>
                     </div>
                 </div>
             </div>

@@ -62,25 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="background-color: var(--light-gray);">
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="../index.php" style="display: flex; align-items: center; text-decoration: none;">
-               <img src="../assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
-                <span><?php echo SITE_NAME; ?> - Admin</span>
-            </a>
-        </div>
-        
-        <div class="navbar-buttons">
-            <a href="../index.php" class="btn btn-secondary btn-capsule">Back to Site</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderAdminNavbar(); ?>
 
     <!-- Main Content -->
     <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 140px);">

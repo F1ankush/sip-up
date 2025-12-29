@@ -27,28 +27,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($message) || strlen($message) < 10) $errors[] = 'Message must be at least 10 characters';
         
         if (empty($errors)) {
-            // Save message to database
-            $saveResult = saveContactMessage($name, $email, $phone, $subject, $message);
+            // Send email to company
+            $to = COMPANY_EMAIL;
+            $email_subject = "New Contact Form Submission: " . $subject;
+            $email_body = "New message from contact form:\n\n";
+            $email_body .= "Name: $name\n";
+            $email_body .= "Email: $email\n";
+            $email_body .= "Phone: " . ($phone ? $phone : 'Not provided') . "\n";
+            $email_body .= "Subject: $subject\n\n";
+            $email_body .= "Message:\n$message\n";
             
-            if ($saveResult['success']) {
-                // Send email to company as well
-                $to = COMPANY_EMAIL;
-                $email_subject = "New Contact Form Submission: " . $subject;
-                $email_body = "New message from contact form:\n\n";
-                $email_body .= "Name: $name\n";
-                $email_body .= "Email: $email\n";
-                $email_body .= "Phone: " . ($phone ? $phone : 'Not provided') . "\n";
-                $email_body .= "Subject: $subject\n\n";
-                $email_body .= "Message:\n$message\n";
-                
-                $headers = "From: $email\r\n";
-                $headers .= "Reply-To: $email\r\n";
-                
-                mail($to, $email_subject, $email_body, $headers);
-                
+            $headers = "From: $email\r\n";
+            $headers .= "Reply-To: $email\r\n";
+            
+            if (mail($to, $email_subject, $email_body, $headers)) {
                 $success_message = 'Thank you for your message! We will get back to you shortly.';
             } else {
-                $error_message = 'Failed to save message. Please try again.';
+                $error_message = 'Failed to send message. Please try again.';
             }
         } else {
             $error_message = implode('<br>', $errors);
@@ -67,34 +62,7 @@ $csrf_token = generateCSRFToken();
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="../index.php" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="../assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
-            </a>
-        </div>
-        
-        <ul class="navbar-menu">
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li class="navbar-button-item"><a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a></li>
-            <li class="navbar-button-item"><a href="login.php" class="btn btn-secondary btn-capsule">Login</a></li>
-        </ul>
-        
-        <div class="navbar-buttons">
-            <a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a>
-            <a href="login.php" class="btn btn-secondary btn-capsule">Login</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderUserNavbar(); ?>
 
     <!-- Page Header -->
     <section class="hero">

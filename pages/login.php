@@ -65,33 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="background-color: var(--light-gray);">
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="../index.php" style="display: flex; align-items: center; text-decoration: none;">
-               <img src="../assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
-            </a>
-        </div>
-        
-        <ul class="navbar-menu">
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li class="navbar-button-item"><a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a></li>
-            <li class="navbar-button-item"><a href="login.php" class="btn btn-secondary btn-capsule">Login</a></li>
-        </ul>
-        
-        <div class="navbar-buttons">
-            <a href="apply.php" class="btn btn-primary btn-capsule">Apply for Account</a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <?php renderUserNavbar(); ?>
 
     <!-- Main Content -->
     <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 140px);">
