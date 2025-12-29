@@ -110,10 +110,30 @@ a:hover {
 }
 
 /* Navbar logo styling */
-.navbar-brand img {
-    height: 40px;
-    margin-right: 10px;
+.navbar-logo {
+    height: 50px;
+    margin-right: 15px;
     object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-logo:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-right: 15px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 /* Navbar button items - hidden on desktop, shown on mobile */
@@ -627,6 +647,13 @@ input[type="radio"] {
     height: auto;
     margin-bottom: 1rem;
     object-fit: contain;
+    filter: brightness(1.15);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.25);
 }
 
 .footer-map {

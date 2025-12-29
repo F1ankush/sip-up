@@ -19,8 +19,7 @@ $products = getProducts();
     <nav class="navbar">
         <div class="navbar-brand">
             <a href="index.php" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="assets/images/logo1.jpg" alt="<?php echo SITE_NAME; ?>">
-                 <!--<span><?php echo SITE_NAME; ?></span> --> 
+                <img src="assets/images/logo1.JPG" alt="<?php echo SITE_NAME; ?>" class="navbar-logo">
             </a>
         </div>
         
