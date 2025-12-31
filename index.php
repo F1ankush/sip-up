@@ -159,40 +159,7 @@ $products = getProducts();
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="assets/images/logo1.jpg" alt="<?php echo COMPANY_NAME; ?>" class="footer-logo">
-                <p>Leading B2B retailer ordering and GST billing platform.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="pages/about.php">About</a></li>
-                    <li><a href="pages/products.php">Products</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p><strong>Email:</strong> <?php echo COMPANY_EMAIL; ?></p>
-                <p><strong>Phone:</strong> <?php echo COMPANY_PHONE; ?></p>
-                <p><strong>Address:</strong> <?php echo COMPANY_ADDRESS; ?></p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Location</h3>
-                <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5734261439226!2d77.59717!3d13.051213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19bba11ce5dd%3A0xed8c3b0e9bcfd4af!2sBangalore%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sin!4v1640000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> <?php echo COMPANY_NAME; ?>. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php renderFooter(); ?>
 
     <script src="assets/js/main.js"></script>
 </body>

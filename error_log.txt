@@ -6,3 +6,112 @@ Fixed Issues:
 ✓ All PHP files verified: No syntax errors
 
 Ready for production use!
+[29-Dec-2025 14:50:35 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 14:50:55 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 14:50:56 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:51 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:53 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:54 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:23:25 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:23:41 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:23:44 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\index.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:32:14 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:32:17 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:57 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:57 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:58 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:58 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:59 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:59 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:59 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:33:59 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:00 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:01 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:02 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:46 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:47 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:47 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:48 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:34:49 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:35:03 Europe/Berlin] Database Exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES)
+[29-Dec-2025 15:36:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function renderUserNavbar() in C:\xampp\htdocs\top1\pages\about.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\about.php on line 13
+[29-Dec-2025 15:40:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function renderUserNavbar() in C:\xampp\htdocs\top1\pages\about.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\top1\pages\about.php on line 13
+[29-Dec-2025 16:01:33 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'b2b_billing_system.contact_messages' doesn't exist in C:\xampp\htdocs\top1\includes\db.php:32
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(32): mysqli->prepare('SELECT * FROM c...')
+#1 C:\xampp\htdocs\top1\admin\messages.php(63): Database->prepare('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 32
+[29-Dec-2025 16:22:16 Europe/Berlin] Database Exception: Access denied for user 'root'@'localhost' (using password: NO)
+[29-Dec-2025 16:22:16 Europe/Berlin] [Database] Error: Exception: Access denied for user 'root'@'localhost' (using password: NO)
+[29-Dec-2025 16:22:21 Europe/Berlin] Database Exception: Access denied for user 'root'@'localhost' (using password: NO)
+[29-Dec-2025 16:22:21 Europe/Berlin] [Database] Error: Exception: Access denied for user 'root'@'localhost' (using password: NO)
+[29-Dec-2025 16:22:22 Europe/Berlin] Database Exception: Access denied for user 'root'@'localhost' (using password: NO)
+[29-Dec-2025 16:22:22 Europe/Berlin] [Database] Error: Exception: Access denied for user 'root'@'localhost' (using password: NO)

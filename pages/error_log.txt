@@ -46,3 +46,59 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\top1\pages\about.php on line 13
+[29-Dec-2025 15:20:31 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:20:37 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:20:38 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:37 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:42 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\contact.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:49 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\login.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8
+[29-Dec-2025 15:22:50 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'b2b_billing_system'@'localhost' (using password: YES) in C:\xampp\htdocs\top1\includes\db.php:8
+Stack trace:
+#0 C:\xampp\htdocs\top1\includes\db.php(8): mysqli->__construct('localhost', 'b2b_billing_sys...', Object(SensitiveParameterValue), 'b2b_billing_sys...')
+#1 C:\xampp\htdocs\top1\includes\db.php(47): Database->__construct()
+#2 C:\xampp\htdocs\top1\pages\apply.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\top1\includes\db.php on line 8

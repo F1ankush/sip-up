@@ -41,45 +41,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Approve application
         $approvalDate = date('Y-m-d H:i:s');
         $status = 'approved';
+        $admin_id = $_SESSION['admin_id'];
         
         // Step 1: Update application status
         $stmt = $db->prepare("UPDATE retailer_applications SET status = ?, approval_date = ?, approval_remarks = ?, approved_by = ? WHERE id = ?");
         if (!$stmt) {
-            $error_message = 'Database error: Unable to update application status';
+            $error_message = 'Database error: ' . $db->error;
+            error_log("Approval Error: " . $db->error);
         } else {
-            $stmt->bind_param("sssii", $status, $approvalDate, $remarks, $_SESSION['admin_id'], $appId);
+            $stmt->bind_param("sssii", $status, $approvalDate, $remarks, $admin_id, $appId);
             
             if ($stmt->execute()) {
+                $stmt->close();
+                
                 // Step 2: Create user account using the dedicated function
-                $username = $application['name']; // Use shop name as username
+                $username = isset($application['name']) ? $application['name'] : 'user';
                 $result = createUserAccountOnApproval($appId, $application['email'], $application['phone'], $username, $application['shop_address']);
                 
                 if ($result['success']) {
-                    $success_message = 'Application approved successfully! User account created with default password: <strong>12345678</strong>';
-                    // Refresh application details
+                    $success_message = 'Application approved successfully! User account created.';
                     $application['status'] = 'approved';
                 } else {
-                    $error_message = $result['message'];
+                    $error_message = isset($result['message']) ? $result['message'] : 'Error creating user account';
                 }
             } else {
                 $error_message = 'Error updating application: ' . $stmt->error;
+                error_log("Update Error: " . $stmt->error);
+                $stmt->close();
             }
         }
     } elseif ($action === 'reject') {
         // Reject application
         $approvalDate = date('Y-m-d H:i:s');
         $status = 'rejected';
+        $admin_id = $_SESSION['admin_id'];
         
         $stmt = $db->prepare("UPDATE retailer_applications SET status = ?, approval_date = ?, approval_remarks = ?, approved_by = ? WHERE id = ?");
-        $stmt->bind_param("sssii", $status, $approvalDate, $remarks, $_SESSION['admin_id'], $appId);
-        
-        if ($stmt->execute()) {
-            $success_message = 'Application rejected successfully!';
-            // Refresh application details
-            $application['status'] = 'rejected';
-            $application['approval_remarks'] = $remarks;
+        if (!$stmt) {
+            $error_message = 'Database error: ' . $db->error;
+            error_log("Reject Prepare Error: " . $db->error);
         } else {
-            $error_message = 'Error rejecting application. Please try again.';
+            $stmt->bind_param("sssii", $status, $approvalDate, $remarks, $admin_id, $appId);
+            
+            if ($stmt->execute()) {
+                $stmt->close();
+                $success_message = 'Application rejected successfully!';
+                $application['status'] = 'rejected';
+                $application['approval_remarks'] = $remarks;
+            } else {
+                $error_message = 'Error rejecting application: ' . $stmt->error;
+                error_log("Reject Execute Error: " . $stmt->error);
+                $stmt->close();
+            }
         }
     }
 }
@@ -103,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if ($success_message): ?>
             <div class="alert alert-success" style="margin-bottom: 2rem;">
-                <strong>Success!</strong> <?php echo htmlspecialchars($success_message); ?>
+                <strong>Success!</strong> <?php echo $success_message; ?>
             </div>
         <?php endif; ?>
 
@@ -138,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div style="margin-bottom: 1.5rem;">
                     <p style="color: #6b7280; margin: 0 0 0.3rem 0;">Shop Address</p>
-                    <p style="margin: 0; font-weight: 600; font-size: 1.1rem;"><?php echo htmlspecialchars($application['shop_address']); ?></p>
+                    <p style="margin: 0; font-weight: 600; font-size: 1.1rem;"><?php echo htmlspecialchars(isset($application['shop_address']) ? $application['shop_address'] : 'N/A'); ?></p>
                 </div>
             </div>
 
@@ -251,40 +264,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <!-- Footer -->
-    <footer class="footer" style="margin-top: 4rem;">
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="../assets/images/logo1.jpg" alt="<?php echo COMPANY_NAME; ?>" class="footer-logo">
-                <p>Leading B2B retailer ordering and GST billing platform.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="applications.php">Applications</a></li>
-                    <li><a href="products.php">Products</a></li>
-                    <li><a href="logout.php">Logout</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p><strong>Email:</strong> <?php echo COMPANY_EMAIL; ?></p>
-                <p><strong>Phone:</strong> <?php echo COMPANY_PHONE; ?></p>
-                <p><strong>Address:</strong> <?php echo COMPANY_ADDRESS; ?></p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Location</h3>
-                <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5734261439226!2d77.59717!3d13.051213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19bba11ce5dd%3A0xed8c3b0e9bcfd4af!2sBangalore%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sin!4v1640000000000" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> <?php echo COMPANY_NAME; ?>. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php renderFooter(); ?>
 
     <script src="../assets/js/main.js"></script>
     <script>

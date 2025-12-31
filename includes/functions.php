@@ -12,22 +12,22 @@ function isAdminLoggedIn() {
 
 function redirectToLogin() {
     header("Location: " . SITE_URL . "pages/login.php");
-    exit();
+    exit;
 }
 
 function redirectToAdminLogin() {
     header("Location: " . SITE_URL . "admin/login.php");
-    exit();
+    exit;
 }
 
 function redirectToDashboard() {
     header("Location: " . SITE_URL . "pages/dashboard.php");
-    exit();
+    exit;
 }
 
 function redirectToAdminDashboard() {
     header("Location: " . SITE_URL . "admin/dashboard.php");
-    exit();
+    exit;
 }
 
 // Session Validation
@@ -423,6 +423,7 @@ function renderAdminNavbar() {
             <li><a href="orders.php">Orders</a></li>
             <li><a href="payments.php">Payments</a></li>
             <li><a href="bills.php">Bills</a></li>
+            <li><a href="messages.php">Messages</a></li>
             <li class="navbar-button-item"><a href="logout.php" class="btn btn-secondary btn-capsule">Logout</a></li>
         </ul>
         
@@ -445,3 +446,42 @@ function renderAdminNavbar() {
     <?php
 }
 
+// Footer Function
+function renderFooter() {
+    ?>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="../assets/images/logo1.jpg" alt="<?php echo FOOTER_COMPANY; ?>" class="footer-logo">
+                <p>Premium B2B platform for retail distribution and billing.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="products.php">Products</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><strong>Email:</strong> <?php echo COMPANY_EMAIL; ?></p>
+                <p><strong>Phone:</strong> <?php echo COMPANY_PHONE; ?></p>
+                <p><strong>Address:</strong> <?php echo COMPANY_ADDRESS; ?></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Connect with us on social media for latest updates.</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <?php echo FOOTER_YEAR; ?> <strong><?php echo FOOTER_COMPANY; ?></strong>, design and development by <a href="<?php echo FOOTER_WEBSITE; ?>" target="_blank" style="color: #fff; text-decoration: none; font-weight: 600;"><?php echo FOOTER_DEVELOPER; ?></a>. All rights reserved.</p>
+        </div>
+    </footer>
+    <?php
+}
